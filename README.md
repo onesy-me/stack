@@ -65,7 +65,7 @@
   amauiStack.push(1, 2, 3, 4);
 
   amauiStack.first;
-  // 1
+  // 4
 
   amauiStack.length;
   // 4
@@ -73,10 +73,10 @@
   const value = amauiStack.pop();
 
   value;
-  // 1
+  // 4
 
   amauiStack.first;
-  // 2
+  // 3
 
   amauiStack.length;
   // 3

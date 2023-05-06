@@ -269,12 +269,12 @@ async function docsUpdateTypes(pathTypes, pathUse, isModules) {
 
   let values = use?.trim().match(/(?:^|}~)[^~]+(?:$|~{)/ig) || [];
 
-  const parts = data.match(/((type|const) [^{|\n]+{\n[^}]+};)|((type|const|function|default function) [^\n]+)|((interface|class|default class) [^}]+};?(\n|$))/ig) || [];
+  const parts = data.match(/((type|const) [^{|\n]+{\n[^}]+};)|((type|const|function|class) [^\n]+)|((interface|class|default class) [^}]+};?(\n|$))/ig) || [];
 
   let valueNew = `\n\n### API\n\n`;
 
   parts.forEach(part => {
-    const partName = (part.match(/(?!type|interface|const|function|default function|default class) [^ \(\)\{\}:]+/i) || [])[0]?.trim();
+    const partName = (part.replace('default ', '').match(/(?!type|interface|const|function|class) [^ \(\)\{\}\:]+/i) || [])[0]?.trim();
 
     valueNew += `#### ${partName}\n\n\`\`\`ts\n${part.trim()}\n\`\`\`\n\n`;
   });

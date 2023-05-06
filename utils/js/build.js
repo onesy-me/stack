@@ -273,7 +273,7 @@ async function docsUpdateTypes(pathTypes, pathUse, isModules) {
 
   if (values[values.length - 1]?.endsWith('\n``')) values[values.length - 1] = values[values.length - 1] + '`';
 
-  const parts = data.match(/((type|const) [^{|\n]+{\n[^}]+};)|((type|const|function) [^\n]+)|((interface|class) [^}]+};?\n)/ig) || [];
+  const parts = data.match(/((type|const) [^{|\n]+{\n[^}]+};)|((type|const|function|default function) [^\n]+)|((interface|class|default class) [^}]+};?\n)/ig) || [];
 
   let valueNew = `\n\n### API\n\n`;
 

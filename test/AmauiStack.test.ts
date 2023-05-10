@@ -5,7 +5,7 @@ import { evaluate } from '../utils/js/test/utils';
 
 import AmauiStack from '../src';
 
-group('@amaui/stack', () => {
+group('AmauiStack', () => {
 
   to('AmauiStack', async () => {
     const value = new AmauiStack([1, 2, 3, 4], 14);

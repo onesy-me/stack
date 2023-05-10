@@ -1,1 +1,1 @@
-export { default } from './amaui-stack';
+export { default } from './AmauiStack';

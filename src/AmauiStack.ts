@@ -1,13 +1,13 @@
-import { is } from '@amaui/utils';
+import { is } from '@onesy/utils';
 
-export type TAmauiStackValue = Array<any>;
+export type TOnesyStackValue = Array<any>;
 
-export default class AmauiStack {
-  public value: TAmauiStackValue = [];
+export default class OnesyStack {
+  public value: TOnesyStackValue = [];
   public limit = 1e9;
 
   public constructor(
-    value: TAmauiStackValue,
+    value: TOnesyStackValue,
     limit: number
   ) {
     if (is('array', value)) this.value = value;
@@ -25,7 +25,7 @@ export default class AmauiStack {
 
   get full() { return this.length === this.limit; }
 
-  public push(...values: TAmauiStackValue): boolean {
+  public push(...values: TOnesyStackValue): boolean {
     for (const value of values) {
       if (this.length >= this.limit) return false;
 
@@ -39,7 +39,7 @@ export default class AmauiStack {
     return this.value.shift();
   }
 
-  public clear(): AmauiStack {
+  public clear(): OnesyStack {
     this.value = [];
 
     return this;

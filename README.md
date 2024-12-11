@@ -4,11 +4,11 @@
 
 <p align='center'>
   <a target='_blank' rel='noopener noreferrer' href='#'>
-    <img src='utils/images/logo.svg' alt='amaui logo' />
+    <img src='utils/images/logo.svg' alt='onesy logo' />
   </a>
 </p>
 
-<h1 align='center'>amaui Stack</h1>
+<h1 align='center'>onesy Stack</h1>
 
 <p align='center'>
   Stack
@@ -39,7 +39,7 @@
 ### Add
 
 ```sh
-yarn add @amaui/stack
+yarn add @onesy/stack
 ```
 
 ### Use cases
@@ -52,29 +52,29 @@ yarn add @amaui/stack
 ### Use
 
 ```javascript
-  import AmauiStack from '@amaui/stack';
+  import OnesyStack from '@onesy/stack';
 
   // Make a new stack instance
-  const amauiStack = new AmauiStack();
+  const onesyStack = new OnesyStack();
 
   // Add values
-  amauiStack.push(1, 2, 3, 4);
+  onesyStack.push(1, 2, 3, 4);
 
-  amauiStack.first;
+  onesyStack.first;
   // 4
 
-  amauiStack.length;
+  onesyStack.length;
   // 4
 
-  const value = amauiStack.pop();
+  const value = onesyStack.pop();
 
   value;
   // 4
 
-  amauiStack.first;
+  onesyStack.first;
   // 3
 
-  amauiStack.length;
+  onesyStack.length;
   // 3
 ```
 

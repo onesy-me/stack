@@ -1,17 +1,17 @@
 /* tslint:disable: no-shadowed-variable */
-import { assert } from '@amaui/test';
+import { assert } from '@onesy/test';
 
 import { evaluate } from '../utils/js/test/utils';
 
-import AmauiStack from '../src';
+import OnesyStack from '../src';
 
-group('AmauiStack', () => {
+group('OnesyStack', () => {
 
-  to('AmauiStack', async () => {
-    const value = new AmauiStack([1, 2, 3, 4], 14);
+  to('OnesyStack', async () => {
+    const value = new OnesyStack([1, 2, 3, 4], 14);
 
     const valueBrowsers = await evaluate((window: any) => {
-      const value = new window.AmauiStack([1, 2, 3, 4], 14);
+      const value = new window.OnesyStack([1, 2, 3, 4], 14);
 
       return [value.value, value.limit];
     });
@@ -21,13 +21,13 @@ group('AmauiStack', () => {
     values.forEach(value => assert(value).eql([[1, 2, 3, 4], 14]));
   });
 
-  group('amauiStack', async () => {
+  group('onesyStack', async () => {
 
     to('length', async () => {
-      const value = new AmauiStack([1, 2, 3, 4], 14);
+      const value = new OnesyStack([1, 2, 3, 4], 14);
 
       const valueBrowsers = await evaluate((window: any) => {
-        const value = new window.AmauiStack([1, 2, 3, 4], 14);
+        const value = new window.OnesyStack([1, 2, 3, 4], 14);
 
         return value.length;
       });
@@ -38,10 +38,10 @@ group('AmauiStack', () => {
     });
 
     to('first', async () => {
-      const value = new AmauiStack([1, 2, 3, 4], 14);
+      const value = new OnesyStack([1, 2, 3, 4], 14);
 
       const valueBrowsers = await evaluate((window: any) => {
-        const value = new window.AmauiStack([1, 2, 3, 4], 14);
+        const value = new window.OnesyStack([1, 2, 3, 4], 14);
 
         return value.first;
       });
@@ -52,10 +52,10 @@ group('AmauiStack', () => {
     });
 
     to('peak', async () => {
-      const value = new AmauiStack([1, 2, 3, 4], 14);
+      const value = new OnesyStack([1, 2, 3, 4], 14);
 
       const valueBrowsers = await evaluate((window: any) => {
-        const value = new window.AmauiStack([1, 2, 3, 4], 14);
+        const value = new window.OnesyStack([1, 2, 3, 4], 14);
 
         return value.peak;
       });
@@ -66,10 +66,10 @@ group('AmauiStack', () => {
     });
 
     to('empty', async () => {
-      const value = new AmauiStack([], 14);
+      const value = new OnesyStack([], 14);
 
       const valueBrowsers = await evaluate((window: any) => {
-        const value = new window.AmauiStack([], 14);
+        const value = new window.OnesyStack([], 14);
 
         return value.empty;
       });
@@ -80,10 +80,10 @@ group('AmauiStack', () => {
     });
 
     to('full', async () => {
-      const value = new AmauiStack([1, 2, 3, 4], 4);
+      const value = new OnesyStack([1, 2, 3, 4], 4);
 
       const valueBrowsers = await evaluate((window: any) => {
-        const value = new window.AmauiStack([1, 2, 3, 4], 4);
+        const value = new window.OnesyStack([1, 2, 3, 4], 4);
 
         return value.full;
       });
@@ -96,10 +96,10 @@ group('AmauiStack', () => {
     group('push', () => {
 
       to('push', async () => {
-        const value = new AmauiStack([], 14);
+        const value = new OnesyStack([], 14);
 
         const valueBrowsers = await evaluate((window: any) => {
-          const value = new window.AmauiStack([], 14);
+          const value = new window.OnesyStack([], 14);
 
           return [value.push(1, 2, 3, 4), value.first, value.length];
         });
@@ -110,10 +110,10 @@ group('AmauiStack', () => {
       });
 
       to('limit', async () => {
-        const value = new AmauiStack([1, 2, 3, 4], 4);
+        const value = new OnesyStack([1, 2, 3, 4], 4);
 
         const valueBrowsers = await evaluate((window: any) => {
-          const value = new window.AmauiStack([1, 2, 3, 4], 4);
+          const value = new window.OnesyStack([1, 2, 3, 4], 4);
 
           return [value.push(14), value.first, value.length];
         });
@@ -126,10 +126,10 @@ group('AmauiStack', () => {
     });
 
     to('pop', async () => {
-      const value = new AmauiStack([1, 2, 3, 4], 14);
+      const value = new OnesyStack([1, 2, 3, 4], 14);
 
       const valueBrowsers = await evaluate((window: any) => {
-        const value = new window.AmauiStack([1, 2, 3, 4], 14);
+        const value = new window.OnesyStack([1, 2, 3, 4], 14);
 
         return [value.pop(), value.first, value.length];
       });
@@ -140,12 +140,12 @@ group('AmauiStack', () => {
     });
 
     to('clear', async () => {
-      const value = new AmauiStack([1, 2, 3, 4], 14);
+      const value = new OnesyStack([1, 2, 3, 4], 14);
 
       value.clear();
 
       const valueBrowsers = await evaluate((window: any) => {
-        const value = new window.AmauiStack([1, 2, 3, 4], 14);
+        const value = new window.OnesyStack([1, 2, 3, 4], 14);
 
         value.clear();
 

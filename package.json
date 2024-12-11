@@ -2,7 +2,7 @@
   "name": "@onesy/stack",
   "version": "1.0.0",
   "description": "Stack",
-  "repository": "https://github.com/onesy-org/onesy-stack.git",
+  "repository": "https://github.com/onesy-me/stack.git",
   "author": "Lazar <lazareric2@gmail.com>",
   "license": "MIT",
   "private": false,
